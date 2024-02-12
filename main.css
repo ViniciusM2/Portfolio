@@ -1,179 +1,346 @@
 .bg {
-    background: url("./background.jpg");
-    background-size: conver;
+  background: url("./assets/background.jpg");
+  background-size: cover;
 }
+
+/* ------------------------------------------------ */
+/* HEADER RELATED STYLES */
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-title{
+  font-family: "Rubik";
+  font-weight: 700;
+  font-size: 2rem;
+  color: white;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+
+/* CSS */
+.header-button {
+  margin-right: 8px;
+  background-color: #111827;
+  border: 1px solid transparent;
+  border-radius: .75rem;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  flex: 0 0 auto;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+  padding: .75rem 1.2rem;
+  text-align: center;
+  text-decoration: none #6B7280 solid;
+  text-decoration-thickness: auto;
+  transition-duration: .2s;
+  transition-property: background-color,border-color,color,fill,stroke;
+  transition-timing-function: cubic-bezier(.4, 0, 0.2, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+}
+
+.header-button:hover {
+  background-color: #374151;
+}
+
+.header-button:focus {
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+@media (min-width: 768px) {
+  .header-button {
+    padding: .75rem 1.5rem;
+  }
+}
+
+
+
+
 
 /* ------------------------------------------------ */
 /* BENTO RELATED STYLES */
 
-
 .bento {
-    min-block-size: 100vh;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2ch;
-    padding: 1ch;
+  min-block-size: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2ch;
+  padding: 1ch;
 }
 
 .bento__container {
-    display: grid;
-    grid-template-rows: 3fr 1fr 1fr 2fr 2fr 3fr;
-    gap: 2ch;
-    min-height: inherit;
-    flex: 2 0 320px;
+  display: grid;
+  grid-template-rows: 3fr 1fr 1fr 2fr 2fr 3fr;
+  gap: 2ch;
+  min-height: inherit;
+  flex: 2 0 320px;
 }
 
 .bento__container[variant-1] {
-    --bg: #ff481e;
-    /* grid-template-columns: 3fr 1fr 2fr; */
-    grid-template-columns: 1fr 1fr;
+  --bg: #ff481e;
+  /* grid-template-columns: 3fr 1fr 2fr; */
+  grid-template-columns: 1fr 1fr;
 }
 
 .bento__container[variant-2] {
-    --bg: #06BEE1;
-    grid-template-columns: 2fr 3fr 1fr 2fr;
+  --bg: #06bee1;
+  grid-template-columns: 2fr 3fr 1fr 2fr;
 }
 
 .bento__container[variant-3] {
-    --bg: #ffffff;
-    grid-template-columns: 1fr 1fr;
+  --bg: #ffffff;
+  grid-template-columns: 1fr 1fr;
 }
 
 .bento__item {
-    height: 100%;
-    width: 100%;
-    grid-column: var(--columns, span 1);
-    grid-row: var(--rows, span 1);
-    background-color: var(--bg);
-    border-radius: 2rem;
+  height: 100%;
+  width: 100%;
+  grid-column: var(--columns, span 1);
+  grid-row: var(--rows, span 1);
+  background-color: var(--bg);
+  border-radius: 2rem;
 }
-
-
 
 /* ------------------------------------------------ */
 /* PROFILE RELATED STYLES */
 
 .profile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 2rem;
-    margin: 1ch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 2rem;
+  margin: 1ch;
 }
 
 .profile-photo {
-    width: 175px;
-    height: 175px;
-    border-radius: 50%;
-    background: url("./profile-transparent-bg.png");
-    background-size: cover;
-    background-position: center;
-    margin-top: 2rem;
-    position: relative;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    background-clip: padding-box;
+  width: 175px;
+  height: 175px;
+  border-radius: 50%;
+  margin-top: 2rem;
+  position: relative;
+
+  background: rgba(255, 255, 255, 0.25)
+    url("./assets/profile-transparent-bg.png");
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background-size: cover;
+  background-position: center;
+  background-clip: padding-box;
 }
 
 .profile-photo-tiny-logo {
-    background: rgba(255, 255, 255, 0.007) url("./personal-brand-logo.svg");
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    position: absolute;
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    background-size: cover;
-    right: 0px;
-    bottom: 0px;
+  background: rgba(255, 255, 255, 0.007) url("./assets/personal-brand-logo.svg");
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-size: cover;
+  right: 0px;
+  bottom: 0px;
 }
-
-
 
 /* ------------------------------------------------ */
 /* TEXT RELATED STYLES */
 
 .title {
-    font-family: 'Rubik';
-    font-weight: 300;
-    font-size: 3rem;
-    color: white;
-    text-align: center;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  font-family: "Rubik";
+  font-weight: 300;
+  font-size: 3rem;
+  color: white;
+  text-align: center;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
 .subtitle {
-    font-family: 'Rubik';
-    font-weight: 300;
-    font-size: 2rem;
-    color: white;
-    text-align: center;
+  font-family: "Rubik";
+  font-weight: 300;
+  font-size: 2rem;
+  color: white;
+  text-align: center;
 }
 
 p {
-    padding-left: 4ch;
-    padding-right: 4ch;
-    line-height: calc(1ex / 0.32);
-    font-family: 'Rubik';
-    font-weight: 400;
-    font-size: 1.2rem;
-    color: white;
+  padding-left: 4ch;
+  padding-right: 4ch;
+  line-height: calc(1ex / 0.32);
+  font-family: "Rubik";
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: white;
 }
 
 /* ------------------------------------------------ */
 /* GLASS STYLES */
 
 .frosted-glass {
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 24px;
-    background: radial-gradient(100% 100% at 0% 0%,
-            rgba(255, 255, 255, 0.4) 0%,
-            rgba(255, 255, 255, 0) 100%);
-    backdrop-filter: blur(42px);
-    -webkit-backdrop-filter: blur(42px);
-    transition: background 0.2s;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 24px;
+  background: radial-gradient(
+    100% 100% at 0% 0%,
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  backdrop-filter: blur(42px);
+  -webkit-backdrop-filter: blur(42px);
+  transition: background 0.2s;
 }
 
 .frosted-glass:hover {
-    background: radial-gradient(100% 100% at 0% 0%,
-            rgba(255, 255, 255, 0.4) 0%,
-            rgba(255, 255, 255, 0) 100%);
+  background: radial-gradient(
+    100% 100% at 0% 0%,
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
 }
 
 /* ------------- */
 
 .tinted-glass {
-    border: 0px none rgba(100, 100, 100, 0);
-    background-color: rgba(0, 0, 0, 0.1);
-    box-shadow:
-        inset 0px -3px 10px 0px rgba(255, 255, 255, 0.15),
-        inset 0px -5px 18px 0px rgba(255, 255, 255, 0.15),
-        inset 0px 6px 12px 0px rgba(255, 255, 255, 0.15),
-        inset 0px 3px 3px 0px rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(100px);
-    -webkit-backdrop-filter: blur(100px);
-    transition: background 0.2s;
+  border: 0px none rgba(100, 100, 100, 0);
+  background-color: rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0px -3px 10px 0px rgba(255, 255, 255, 0.15),
+    inset 0px -5px 18px 0px rgba(255, 255, 255, 0.15),
+    inset 0px 6px 12px 0px rgba(255, 255, 255, 0.15),
+    inset 0px 3px 3px 0px rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(100px);
+  -webkit-backdrop-filter: blur(100px);
+  transition: background 0.2s;
 }
 
 .tinted-glass:hover {
-    background-color: rgba(0, 0, 0, 0.0);
+  background-color: rgba(0, 0, 0, 0);
 }
 
 /* ------------- */
 
 .pixie-glass {
-    background: rgba(255, 255, 255, 0.25);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    transition: background 0.2s;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: background 0.2s;
 }
 
 .pixie-glass:hover {
-    background: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.35);
 }
+
+/* ------------------------------------------------ */
+/* SKILLS STYLES */
+
+.skill-card {
+  position: relative;
+}
+
+.skill-container {
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  background-clip: padding-box;
+
+  border: 1px solid rgba(255, 255, 255, 0.18); */
+
+  aspect-ratio: 1 / 1;
+  position: absolute;
+}
+
+.symmetrical-skill-logo {
+  height: 70%;
+}
+
+.flutter-skill-logo {
+  height: 70%;
+  margin-right: 10%;
+}
+
+/* ------------------------------------------------ */
+/* Author... STYLES */
+
+.author-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ------------------------------------------------ */
+/* Experience... STYLES */
+.experience-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ------------------------------------------------ */
+/* Number... STYLES */
+.number-container {
+  width: 176px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.number-text {
+  margin-bottom: 0.5ch;
+  margin-top: 0.5ch;
+  line-height: 0;
+  font-family: "Rubik";
+  font-weight: 300;
+  font-size: 6rem;
+  color: white;
+  text-align: center;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* ------------------------------------------------ */
+/* Social Media... STYLES */
+
+.social-media-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-media-logo {
+  height: 100px;
+  aspect-ratio: 1 / 1;
+}
+
+.big-text {
+  margin-bottom: 0.5ch;
+  margin-top: 0.5ch;
+  line-height: 0;
+  font-family: "Rubik";
+  font-weight: 800;
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
