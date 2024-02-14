@@ -1,6 +1,34 @@
+
+
 .bg {
   background: url("./assets/background.jpg");
   background-size: cover;
+}
+
+/* ------------------------------------------------ */
+/* CIRCLE BUTTON RELATED STYLES */
+
+/* Style buttons */
+.circle-btn {
+  /* aspect-ratio: 1 / 1; */
+  border-radius: 50%;
+  background-color: DodgerBlue; /* Blue background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 24px;
+  font-size: 24px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+}
+
+/* Darker background on mouse-over */
+.circle-btn:hover {
+  background-color: RoyalBlue;
+}
+
+.circle-btn-position {
+  bottom: 12px;
+  left: 12px;
+  position: absolute;
 }
 
 /* ------------------------------------------------ */
